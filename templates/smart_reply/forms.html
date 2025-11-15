@@ -9,49 +9,46 @@
 
 <body>
 
-    <!-- ===== HEADER ===== -->
     <header>
         <div class="logo">
             <div class="logo-box">
                 <img src="/static/logo.png" alt="Logo" />
             </div>
-            <span></span>
         </div>
 
         <nav>
             <ul>
-                <li><a href="#">Documentation</a></li>
+                <li><a href="{% url 'smart_reply:tutorial' %}">Tutorial</a></li>
             </ul>
         </nav>
 
-        <a class="btn-demo" href="{% url 'smart_reply:home' %}">Home</a>
+        <a class="btn-primary" href="{% url 'smart_reply:home' %}">Home</a>
     </header>
 
-    <!-- ===== HERO ===== -->
+
+
     <section class="hero">
-        <h1 align="center">Envie um Texto ou Arquivo <br>para Analise</h1>
+        <h1>Envie um Texto ou Arquivo <br>para Análise</h1>
     </section>
 
-    <!-- ===== FORM CARDS ===== -->
-    <div class="hero-container">
 
+    <div class="page-card" style="margin-top: 30px;">
+        <h2 style="text-align:center;">Envie um Texto ou Arquivo</h2>
 
-        <div class="hero-card" style="padding: 30px;">
-            <h2 style="text-align:center;">Envie um Texto ou Arquivo</h2>
+        <form method="POST" enctype="multipart/form-data" style="margin-top: 25px;">
+            {% csrf_token %}
 
-            <form method="POST"> 
-                <label>Mensagem:</label><br>
-                {% csrf_token %}
-                {{ form.text }}<br><br>
+            <label>Mensagem:</label><br>
+            {{ form.text }}<br><br>
 
-                <label>Arquivo (PDF ou TXT):</label><br>
-                {{ form.file }}<br><br>
-                <button type="submit" class="btn-primary" style="width: 100%;">Enviar</button>
-            </form>
-        </div>
+            <label>Arquivo (PDF ou TXT):</label><br>
+            {{ form.file }}<br><br>
+
+            <button type="submit" class="btn-primary" style="width: 100%;">Enviar</button>
+        </form>
     </div>
 
-    <!-- ===== FOOTER ===== -->
+
     <footer>
         <div class="footer-left">
             <div class="logo">

@@ -1,4 +1,6 @@
-/* ===== RESET ===== */
+/* =======================
+   RESET
+======================= */
 * {
     margin: 0;
     padding: 0;
@@ -8,10 +10,13 @@
 
 body {
     background: #0f0b20;
-    color: #fff;
+    color: #e6e0ff;
 }
 
-/* ===== HEADER ===== */
+
+/* =======================
+   HEADER
+======================= */
 header {
     width: 100%;
     padding: 20px 60px;
@@ -22,16 +27,12 @@ header {
     backdrop-filter: blur(10px);
     position: fixed;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
 }
+
+
 .logo img {
     width: 158px;
-    height: auto;     
-}
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 0px;
 }
 
 .logo-box {
@@ -42,81 +43,27 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: bold;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-}
 
-nav ul li {
-    position: relative;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #ddd;
-    font-size: 16px;
-    transition: 0.2s;
-}
-
-nav ul li a:hover {
-    color: #fff;
-}
-
-/* ===== DROPDOWN ===== */
-.dropdown-menu {
-    display: none;
+.page-title {
     position: absolute;
-    top: 30px;
-    background: #201945;
-    padding: 15px;
-    border-radius: 10px;
-    min-width: 160px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.3rem;
+    color: #ffffff;
+    opacity: 0.9;
+    letter-spacing: 1px;
+    pointer-events: none; 
 }
 
-.dropdown-menu li {
-    margin-bottom: 10px;
-}
 
-.dropdown-menu li:last-child {
-    margin-bottom: 0;
-}
-
-.dropdown:hover .dropdown-menu {
-    display: block;
-}
-
+.btn-primary,
 .btn-demo {
-    padding: 10px 20px;
-    background: #773BFF;
-    border-radius: 8px;
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    transition: 0.2s;
-}
-
-.btn-demo:hover {
-    background: #8F5BFF;
-}
-
-/* ===== HERO CARD BUTTON ===== */
-.card-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 15px;
-}
-
-/* Botão primário moderno */
-.btn-primary {
     display: inline-block;
     background: linear-gradient(135deg, #6a11cb, #2575fc);
     color: #fff;
-    padding: 14px 32px;
+    padding: 12px 28px;
     font-size: 1rem;
     font-weight: 600;
     border-radius: 12px;
@@ -125,91 +72,142 @@ nav ul li a:hover {
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
 }
 
-/* Hover com glow */
-.btn-primary:hover {
+.btn-primary:hover,
+.btn-demo:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(120, 73, 255, 0.6);
-    cursor: pointer;
-}
-
-.btn-primary:active {
-    transform: scale(0.96);
 }
 
 
-
-
-/* ===== HERO ===== */
+/* =======================
+   HERO
+======================= */
 .hero {
-    height: 450px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
+    padding: 140px 20px 80px;
     background: linear-gradient(180deg, #1c1438, #120d2b);
-    margin-top: 90px;
+    text-align: center;
 }
 
 .hero h1 {
     font-size: 42px;
     color: #d8caff;
-    opacity: 0.8;
+    line-height: 1.3;
 }
 
-/* ===== HERO CONTAINER ===== */
+
+/* =======================
+   HERO CARD
+======================= */
 .hero-container {
     display: flex;
-    justify-content: center;   
-    align-items: center;       
-    gap: 40px;                
-    flex-wrap: wrap;           
+    justify-content: center;
     margin-top: 40px;
 }
 
+.hero-card {
+    background: #18122e;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 5px 16px rgba(0,0,0,0.3);
+}
 
-/* ===== FOOTER ===== */
+.card-buttons {
+    text-align: center;
+}
+
+
+/* =======================
+   PAGE CARD
+======================= */
+.page-card {
+    max-width: 700px;
+    margin: 60px auto;
+    background: #18122e;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.35);
+}
+
+.page-card h2 {
+    color: #e6e0ff;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.muted {
+    color: #9b8fbe;
+    font-size: 0.9rem;
+}
+
+
+/* =======================
+   FORMS
+======================= */
+
+form label {
+    font-weight: bold;
+    color: #d8caff;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #3a2e66;
+    background: #100b25;
+    color: #d8caff;
+    margin-top: 6px;
+}
+
+form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+form input:focus,
+form textarea:focus {
+    outline: none;
+    border-color: #6a11cb;
+    box-shadow: 0 0 6px rgba(120, 73, 255, 0.5);
+}
+
+
+/* =======================
+   NAV
+======================= */
+nav ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+nav ul li a {
+    color: #ffffff;             
+    text-decoration: none;       
+    transition: 0.25s ease;
+    font-size:1.2rem;
+    opacity: 0.9;
+}
+
+nav ul li a:hover {
+    color: #b589ff;             
+    text-shadow: 0 0 8px #b589ff;
+}
+
+
+/* =======================
+   FOOTER
+======================= */
 footer {
     margin-top: 100px;
     padding: 60px;
     background: #0b0918;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
 }
 
 .footer-left {
-    max-width: 250px;
-}
-
-.footer-left p {
-    margin: 20px 0;
-    color: #aaa;
-}
-
-.social span {
-    margin-right: 12px;
-    cursor: pointer;
-    font-size: 22px;
-}
-
-.footer-links {
     display: flex;
-    gap: 80px;
+    align-items: center;
+    gap: 20px;
 }
-
-.column h4 {
-    margin-bottom: 15px;
-    color: #b689ff;
-}
-
-.column a {
-    display: block;
-    margin-bottom: 8px;
-    text-decoration: none;
-    color: #bbb;
-}
-
-.column a:hover {
-    color: #fff;
-}
-
-

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial</title>
+    <link rel="stylesheet" href="/static/tutorial.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <div class="logo-box">
+            <img src="/static/logo.png" alt="Logo" />
+        </div>
+        <span></span>
+    </div>
+        <nav>
+            <ul>
+                <li><a href="{% url 'smart_reply:home' %}">Home</a></li>
+            </ul>
+        </nav>
+
+    <a class="btn-primary" href="{% url 'smart_reply:process' %}">Inicie o Teste</a>
+</header>
+
+<section class="hero">
+    <h1>Smart Reply — Tutorial</h1>
+</section>
+
+<section class="how-it-works">
+    <h2>Como o Smart Reply Funciona?</h2>
+    <p>
+        O Smart Reply utiliza inteligência artificial para analisar arquivos e textos enviados, 
+        classificando o conteúdo automaticamente e gerando uma resposta coerente, clara e contextualizada.
+    </p>
+
+    <div class="steps">
+        <div class="step">
+            <h3>1. Envio de Arquivos e Mensagens</h3>
+            <p>PDF, TXT ou mensagem digitada. O sistema extrai todo o conteúdo automaticamente e o pré processa.</p>
+        </div>
+
+        <div class="step">
+            <h3>2. Interpretação de Conteúdo</h3>
+            <p>O modelo identifica o idioma (Português ou Inglês), o tema principal e a categoria da mensagem, garantindo precisão.</p>
+        </div>
+
+        <div class="step">
+            <h3>3. Resposta</h3>
+            <p>O sistema cria uma resposta completa e profissional baseada no conteúdo enviado.</p>
+        </div>
+
+        <div class="step">
+            <h3>4. Resultados</h3>
+            <p>Veja a categoria detectada, o texto analisado e a resposta gerada automaticamente.</p>
+        </div>
+    </div>
+</section>
+
+<div class="hero-container">
+    <div class="hero-card">
+        <div class="card-buttons">
+            <a class="btn-primary" href="{% url 'smart_reply:process' %}">Teste Aqui</a>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-left">
+        <div class="logo">
+            <div class="logo-box">
+                <img src="/static/logo.png" alt="Logo" />
+            </div>
+        </div>
+        <p class="muted">2025 made by Emanuel Duarte.</p>
+    </div>
+</footer>
+
+</body>
+</html>

@@ -8,13 +8,16 @@ import asyncio
 def smart_reply_home(req):
     return render(req, 'smart_reply/home.html')
 
+def smart_reply_tutorial(req):
+    return render(req, 'smart_reply/tutorial.html')
+
 def smart_reply_view(request):
     if request.method == "POST":
         form = EmailMessageForm(request.POST, request.FILES)
         if form.is_valid():
             email = form.save()
 
-            if email.text is None:
+            if email.text is None or email.text.strip() == "":
                 email.text = "Read the attached file\n. Use the file content to classify, generate a response and the file main language."
             
             file_path = email.file.path if email.file else None

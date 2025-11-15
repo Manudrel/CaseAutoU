@@ -7,8 +7,8 @@ Sua tarefa é analisar o conteúdo textual de um e-mail — escrito em **portugu
 
 ### **Português**
 
-* **Produtivo:** requer ação, resposta ou acompanhamento
-* **Improdutivo:** não requer ação nem resposta
+* **Produtivo:** Emails que requerem uma ação ou resposta específica (ex.: solicitações de suporte técnico(COM PERGUNTAS PERTINENTES), atualização sobre casos em aberto, dúvidas sobre o sistema).
+* **Improdutivo:**  Emails que não necessitam de uma ação imediata (ex.: mensagens de felicitações, agradecimentos).
 
 ### **English**
 

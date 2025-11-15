@@ -8,40 +8,42 @@
 </head>
 <body>
 
-    <!-- ===== HEADER ===== -->
     <header>
         <div class="logo">
             <div class="logo-box">
                 <img src="/static/logo.png" alt="Logo" />
             </div>
-            <span></span>
         </div>
 
         <nav>
             <ul>
-                <li><a href="#">Documentação</a></li>
+                <li><a href="{% url 'smart_reply:tutorial' %}">Tutorial</a></li>
             </ul>
         </nav>
 
         <a class="btn-primary" href="{% url 'smart_reply:process' %}">Inicie o Teste</a>
     </header>
 
-    <!-- ===== HERO / CONTENT ===== -->
+
     <section class="hero">
-        <h1 align="center">Smart Reply — Classificação e <br>Resposta Automatizada</h1>
+        <h1>Smart Reply — <br>Classificação e Resposta Automatizada</h1>
     </section>
 
-    <div class="hero-container">
-        <div class="hero-card">
-            <div class="card-buttons">
-                <a class="btn-primary" href="{% url 'smart_reply:process' %}">Teste Aqui</a>
-            </div>
+
+    <div class="page-card">
+        <h2 align="center">Teste Agora</h2>
+
+        <p class="muted" align="center">
+            Envie um e-mail para classificação e resposta automática.
+        </p>
+
+        <div class="card-buttons" style="margin-top: 25px;">
+            <a class="btn-primary" href="{% url 'smart_reply:process' %}">Começar</a>
         </div>
     </div>
 
-    <!-- ===== FOOTER ===== -->
-    <footer>
 
+    <footer>
         <div class="footer-left">
             <div class="logo">
                 <div class="logo-box">
@@ -49,11 +51,8 @@
                 </div>
             </div>
 
-
             <p class="muted">2025 made by Emanuel Duarte.</p>
-
         </div>
-
     </footer>
 
 </body>
