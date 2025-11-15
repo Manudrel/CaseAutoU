@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="pt-br">
+<head><meta charset="utf-8"><title>Email</title></head>
+<body>
+  <h1>Detalhe do e-mail</h1>
+
+
+    <p><strong>Categoria:</strong> {{ email.category }}</p>
+    <p><strong>Resposta:</strong></p>
+    <pre>{{ email.ai_response }}</pre>
+
+
+
+  <p><a href="{% url 'smart_reply' %}">Voltar</a></p>
+</body>
+</html>
+

@@ -1,4 +1,4 @@
-from utils.prompt_loader import prompt_loader
+from ai_core.utils.prompt_loader import prompt_loader
 from groq import Groq, APIConnectionError, APIStatusError
 from dotenv import load_dotenv
 import os
@@ -30,7 +30,7 @@ async def get_response(email_text: str, category: str) -> str:
         ]
         
         messages.extend([
-            {"role": "user", "content": f"The email falls under the category: {category}."}])
+            {"role": "user", "content": f"**{category}**"}])
         
         # Adds the actual email prompt at the end
         messages.append({"role": "user", "content": email_text})

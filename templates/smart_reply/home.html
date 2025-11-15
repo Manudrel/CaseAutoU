@@ -1,0 +1,148 @@
+<style>
+  /* clean, modern hero + cards layout */
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 2.5rem;
+    align-items: center;
+    padding: 3.5rem 1.25rem;
+  }
+  .hero .headline {
+    max-width: 680px;
+  }
+  h1.site-title {
+    font-size: 2.1rem;
+    margin: 0 0 0.5rem 0;
+    line-height: 1.05;
+  }
+  p.lead {
+    color: #475569;
+    margin: 0 0 1.25rem 0;
+    font-size: 1.05rem;
+  }
+
+  .card-cta {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1.25rem;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .primary-btn {
+    display: inline-block;
+    background: linear-gradient(90deg,#2563eb,#4f46e5);
+    color: white;
+    padding: 10px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .secondary-link {
+    color: #374151;
+    font-size: 0.95rem;
+    text-decoration: none;
+  }
+
+  .features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding: 1rem 1.25rem 3rem 1.25rem;
+  }
+  .feature-card {
+    background: white;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 4px 14px rgba(2,6,23,0.04);
+    min-height: 120px;
+  }
+  .feature-card h4 { margin: 0 0 0.5rem 0; }
+  .muted { color: #6b7280; font-size: 0.95rem; }
+
+  footer.project-info { padding: 2rem 1.25rem; color: #6b7280; font-size: 0.95rem; }
+
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; }
+    .features { grid-template-columns: 1fr; }
+  }
+</style>
+<title>Smart Reply — Classificação e Resposta Automática de E-mails</title>
+<section class="hero">
+  <div class="headline">
+    <h1 class="site-title">Smart Reply — Classificação e Resposta Automática de E-mails</h1>
+    <p class="lead">Uma solução rápida para equipes que recebem alto volume de e-mails. O sistema classifica automaticamente mensagens como <strong>Produtivo</strong> (requere ação) ou <strong>Improdutivo</strong> (não requer) e sugere respostas profissionais, liberando tempo do time para tarefas mais estratégicas.</p>
+
+    <ul class="muted">
+      <li><strong>Suporta:</strong> texto colado, upload de .txt e .pdf</li>
+      <li><strong>NLP:</strong> pré-processamento (stopwords, lematização) em PT/EN</li>
+      <li><strong>IA:</strong> classificador + gerador de resposta via LLM</li>
+    </ul>
+
+    <p style="margin-top:1.25rem;">
+      <a class="primary-btn" href="{% url 'smart_reply' %}">Abrir formulário</a>
+      <a class="secondary-link" href="{% url 'smart_reply' %}" style="margin-left:1rem;">Processar um e-mail</a>
+    </p>
+  </div>
+
+  <aside class="card-cta">
+    <div>
+      <strong>Resumo rápido</strong>
+      <p class="muted" style="margin:0.4rem 0 0 0;">Envie um e-mail ou faça upload de arquivo. O sistema extrai o texto, classifica e devolve uma sugestão de resposta que você pode editar antes de enviar.</p>
+    </div>
+
+    <div style="display:flex; gap:0.5rem; margin-top:0.5rem; align-items:center;">
+      <div style="font-size:1.6rem; background:#eef2ff; border-radius:8px; padding:8px 10px;">🧠</div>
+      <div>
+        <div style="font-weight:600;">Pipeline</div>
+        <div class="muted">Upload → Extração (.pdf/.txt) → Pré-processamento → Classificação → Resposta</div>
+      </div>
+    </div>
+
+    <div style="margin-top:0.6rem; display:flex; gap:0.5rem;">
+      <a class="primary-btn" href="{% url 'smart_reply' %}">Testar agora</a>
+      <a class="secondary-link" href="#docs" style="align-self:center;">Como funciona</a>
+    </div>
+  </aside>
+</section>
+
+<section class="features" id="docs">
+  <div class="feature-card">
+    <h4>Classificação</h4>
+    <p class="muted">Detecta se o e-mail requer ação (Produtivo) ou não (Improdutivo). Use o histórico para ajustar regras caso queira um filtro mais conservador.</p>
+  </div>
+
+  <div class="feature-card">
+    <h4>Geração de Resposta</h4>
+    <p class="muted">Gera uma resposta curta, profissional e personalizável. Você decide enviar, editar ou ignorar a sugestão.</p>
+  </div>
+
+  <div class="feature-card">
+    <h4>Segurança & Privacidade</h4>
+    <p class="muted">Armazene localmente os e-mails processados ou envie apenas o texto para a API. Nunca deixe chaves em repositórios públicos.</p>
+  </div>
+</section>
+
+<footer class="project-info">
+  <div style="max-width:980px; margin:0 auto;">
+    <strong>Como usar:</strong>
+    <ol>
+      <li>Vá para o formulário ("Abrir formulário").</li>
+      <li>Cole o conteúdo do e-mail ou envie o arquivo (.txt/.pdf).</li>
+      <li>Clique em "Enviar" — a IA irá classificar e gerar uma resposta.</li>
+    </ol>
+    <p style="margin-top:0.5rem;">Feito com amor para sua automação. Melhore o texto, adicione estilos ou integre com seu sistema de envio de e-mails.</p>
+  </div>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', ()=>{
+    const btns = document.querySelectorAll('.primary-btn');
+    btns.forEach(b=>{
+      b.addEventListener('mouseenter', ()=> b.style.transform = 'translateY(-2px)');
+      b.addEventListener('mouseleave', ()=> b.style.transform = 'none');
+    })
+  })
+</script>
+

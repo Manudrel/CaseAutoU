@@ -1,4 +1,4 @@
-from utils.prompt_loader import prompt_loader
+from ai_core.utils.prompt_loader import prompt_loader
 from groq import Groq, APIConnectionError, APIStatusError
 from dotenv import load_dotenv
 import os
