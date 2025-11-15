@@ -78,7 +78,9 @@ O projeto possui um **tema escuro moderno**, com:
 - Botão de ação claro e acessível
 
 ---
-
+## Como Rodar o Projeto na Web
+Acesse: [(https://caseautou-smartreply.onrender.com)](https://caseautou-smartreply.onrender.com)
+---
 ## Como Rodar o Projeto LOCALMENTE
 
 ### 1 Instalar dependências
