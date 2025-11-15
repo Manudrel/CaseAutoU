@@ -79,7 +79,7 @@ O projeto possui um **tema escuro moderno**, com:
 
 ---
 
-## Como Rodar o Projeto
+## Como Rodar o Projeto LOCALMENTE
 
 ### 1 Instalar dependências
 ```bash
