@@ -15,7 +15,7 @@ def smart_reply_view(request):
             email = form.save()
 
             if email.text is None:
-                email.text = ""
+                email.text = "Read the attached file\n. Use the file content to classify, generate a response and the file main language."
             
             file_path = email.file.path if email.file else None
 
@@ -33,7 +33,8 @@ def smart_reply_view(request):
                 "category": email.category
             }
 
-            return redirect("email_detail", email.id)
+            return redirect("smart_reply:detail", pk=email.id)
+
 
     else:
         form = EmailMessageForm()

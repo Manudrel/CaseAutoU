@@ -1,24 +1,67 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Smart Reply</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Reply — Formulário</title>
+    <link rel="stylesheet" href="/static/styles.css">
 </head>
+
 <body>
 
-    <h2>Enviar mensagem ou arquivo</h2>
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="logo">
+            <div class="logo-box">
+                <img src="/static/logo.png" alt="Logo" />
+            </div>
+            <span></span>
+        </div>
 
-    <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
+        <nav>
+            <ul>
+                <li><a href="#">Documentation</a></li>
+            </ul>
+        </nav>
 
-        <label>Mensagem:</label><br>
-        {{ form.text }}<br><br>
+        <a class="btn-demo" href="{% url 'smart_reply:home' %}">Home</a>
+    </header>
 
-        <label>Arquivo (pdf ou txt):</label><br>
-        {{ form.file }}<br><br>
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+        <h1 align="center">Envie um Texto ou Arquivo <br>para Analise</h1>
+    </section>
 
-        <button type="submit">Enviar</button>
-    </form>
-    <p><a href="{% url 'smart_reply_home' %}">Voltar</a></p>
+    <!-- ===== FORM CARDS ===== -->
+    <div class="hero-container">
+
+
+        <div class="hero-card" style="padding: 30px;">
+            <h2 style="text-align:center;">Envie um Texto ou Arquivo</h2>
+
+            <form method="POST"> 
+                <label>Mensagem:</label><br>
+                {% csrf_token %}
+                {{ form.text }}<br><br>
+
+                <label>Arquivo (PDF ou TXT):</label><br>
+                {{ form.file }}<br><br>
+                <button type="submit" class="btn-primary" style="width: 100%;">Enviar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="footer-left">
+            <div class="logo">
+                <div class="logo-box">
+                    <img src="/static/logo.png" alt="Logo" />
+                </div>
+            </div>
+            <p class="muted">2025 Feito por Emanuel Duarte.</p>
+        </div>
+    </footer>
+
 </body>
 </html>

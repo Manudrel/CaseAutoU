@@ -1,8 +1,10 @@
 from django.urls import path
 from .views import smart_reply_view, smart_reply_home, email_detail
 
+app_name = "smart_reply"
+
 urlpatterns = [
-    path('', smart_reply_home, name='smart_reply_home'),
-    path('smart_reply/', smart_reply_view, name='smart_reply'),
-    path('<int:pk>/', email_detail, name='email_detail'),
+    path('', smart_reply_home, name='home'),                       
+    path('process/', smart_reply_view, name='process'),            
+    path('email/<int:pk>/', email_detail, name='detail'),          
 ]
